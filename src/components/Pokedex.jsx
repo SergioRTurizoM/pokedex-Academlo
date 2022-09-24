@@ -36,15 +36,33 @@ const Pokedex = () => {
   };
 
   const searchType = (typeUrl) => {
-    axios.get(typeUrl)
-    .then(res=>setPokeList(res.data.pokemon.map(x=>x.pokemon)))
+    axios
+      .get(typeUrl)
+      .then((res) => setPokeList(res.data.pokemon.map((x) => x.pokemon)));
   };
 
+  const [page, setPage] = useState(1);
+  const quantityPokePerPage = 5;
+  const lastPokeIndex = page * quantityPokePerPage;
+  const firstPokeindex = lastPokeIndex - quantityPokePerPage;
+  const pokePaginated = pokeList.slice(firstPokeindex, lastPokeIndex);
+
+  const lastPage = Math.ceil(pokeList.length/quantityPokePerPage)
+  const pagesNumber = [];
+
+  for (let i = 1; i <= lastPage; i++){
+    pagesNumber.push(i)
+  }
 
   return (
     <div>
       <h1>Pokemons</h1>
       <p>Welcome {name} !</p>
+      <button onClick={()=>setPage(page -1)} disabled={page===1}>Previous page</button>
+      <button onClick={()=>setPage(page +1)} disabled={page === lastPage}>Next page</button>
+      {pagesNumber.map(number => (
+        <button onClick={()=>setPage(number)}>{number}</button>
+      ))}
       <div className="searchContainer">
         <div>
           <label>Select by type</label>
@@ -75,7 +93,7 @@ const Pokedex = () => {
       </div>
       <div className="pokedexContainer">
         <ul>
-          {pokeList.map((pokemon) => (
+          {pokePaginated.map((pokemon) => (
             <PokemonCard url={pokemon.url} key={pokemon.url} />
           ))}
         </ul>
