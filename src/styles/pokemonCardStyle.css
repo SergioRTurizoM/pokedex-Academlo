@@ -1,0 +1,21 @@
+
+img{
+    width: 10vw;
+}
+
+.card {
+    width: 25vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    color: black;
+    margin: 5%;
+    padding: 5%;
+    border-color:#c43d4d;
+    border-style: solid;
+    border-radius: 8px;
+    background: white;
+    border-width: 0.3em;
+}

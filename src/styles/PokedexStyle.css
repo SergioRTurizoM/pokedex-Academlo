@@ -1,0 +1,19 @@
+.pokedexpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.pokedexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.searchContainer{
+    display: flex;
+    gap: 1em;
+    margin: 1em;
+    
+}

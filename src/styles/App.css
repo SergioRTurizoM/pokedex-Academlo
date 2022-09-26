@@ -1,0 +1,76 @@
+html {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  background-color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: black;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../src/assets/images/wallpaperpikachu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.subcontainer {
+  position: relative;
+  left: 5%;
+  top: 5%;
+}
+
+.formStart {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: fit-content;
+}
+.buttonStart {
+  width: fit-content;
+  height: 4vh;
+  margin-top: 1em;
+  background-color: ;
+}
+
+.imgPokedex {
+  width: 50%;
+}
+.logoPokedex {
+  width: 10vw;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

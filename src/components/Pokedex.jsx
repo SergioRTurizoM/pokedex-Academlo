@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
+import PokedexStyle from "../styles/PokedexStyle.css";
 
 const Pokedex = () => {
   const name = useSelector((state) => state.pokeNameSlice);
@@ -21,7 +22,7 @@ const Pokedex = () => {
       .then((res) => setPokeList(res.data.results));
   }, []);
 
-  // console.log(pokeList);
+  console.log(pokeList);
 
   useEffect(() => {
     axios
@@ -47,22 +48,18 @@ const Pokedex = () => {
   const firstPokeindex = lastPokeIndex - quantityPokePerPage;
   const pokePaginated = pokeList.slice(firstPokeindex, lastPokeIndex);
 
-  const lastPage = Math.ceil(pokeList.length/quantityPokePerPage)
+  const lastPage = Math.ceil(pokeList.length / quantityPokePerPage);
   const pagesNumber = [];
 
-  for (let i = 1; i <= lastPage; i++){
-    pagesNumber.push(i)
+  for (let i = 1; i <= lastPage; i++) {
+    pagesNumber.push(i);
   }
 
   return (
-    <div>
-      <h1>Pokemons</h1>
-      <p>Welcome {name} !</p>
-      <button onClick={()=>setPage(page -1)} disabled={page===1}>Previous page</button>
-      <button onClick={()=>setPage(page +1)} disabled={page === lastPage}>Next page</button>
-      {pagesNumber.map(number => (
-        <button onClick={()=>setPage(number)}>{number}</button>
-      ))}
+    <div className="pokedexpage">
+      <h1>Welcome {name} !</h1>
+      <h2>Elige tu Pokemon</h2>
+
       <div className="searchContainer">
         <div>
           <label>Select by type</label>
@@ -79,24 +76,40 @@ const Pokedex = () => {
           </select>
         </div>
         <br />
-        <br />
         <div>
           <label>Search by name</label>
+          <input
+            type="text"
+            placeholder="Search by name"
+            value={nameInput}
+            onChange={(e) => setNameInput(e.target.value)}
+          ></input>
+          <button onClick={() => searchName()}>Search</button>
         </div>
-        <input
-          type="text"
-          placeholder="Search by name"
-          value={nameInput}
-          onChange={(e) => setNameInput(e.target.value)}
-        ></input>
-        <button onClick={() => searchName()}>Search</button>
+      </div>
+
+      <div>
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          Previous page
+        </button>
+
+        {pagesNumber.map((number) => (
+          <button onClick={() => setPage(number)}>{number}</button>
+        ))}
+        <button onClick={() => setPage(page + 1)} disabled={page === lastPage}>
+          Next page
+        </button>
       </div>
       <div className="pokedexContainer">
-        <ul>
-          {pokePaginated.map((pokemon) => (
-            <PokemonCard url={pokemon.url} key={pokemon.url} />
-          ))}
-        </ul>
+        <div>
+          <ul>
+            {pokePaginated.map((pokemon) => (
+              <li>
+                <PokemonCard url={pokemon.url} key={pokemon.url} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
