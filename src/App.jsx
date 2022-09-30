@@ -24,6 +24,7 @@ function App() {
           <Route path="/pokedex/:id" element={<PokemonDetail />}></Route>
         </Route>
       </Routes>
+      Made with love by Sergio Turizo
     </HashRouter>
   );
 }
