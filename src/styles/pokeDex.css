@@ -1,0 +1,32 @@
+.containerDetails{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cardDetail{
+    width: 50vw;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 2%;
+    text-align: left;
+}
+
+.list-group{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 10px;
+    border-top: 0;
+    border-bottom: 0;
+    
+}
+
+.list-group-item{
+    padding: 1%;
+    margin: 0;
+}
+
+.imagePokemon{
+    width: 50%;
+}

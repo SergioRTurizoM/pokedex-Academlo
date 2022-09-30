@@ -1,19 +1,58 @@
-.pokedexpage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.pokedexpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.pokedexContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.pokedexContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
 }
 
-.searchContainer{
-    display: flex;
-    gap: 1em;
-    margin: 1em;
-    
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+
+  margin: 1em;
+  width: 60vw;
+}
+
+.selection {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 30vw;
+  height: 20px;
+}
+
+.selectList {
+  height: max-content;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+h1 {
+  margin: 0.2em;
+  font-size: 4em;
+}
+
+.alert {
+  display: flex;
+  flex-direction: row;
+  height: 1vh;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  padding: 1.5em;
 }

@@ -1,21 +1,17 @@
 
 img{
-    width: 10vw;
+    width: 8vw;
 }
 
 .card {
-    width: 25vw;
-    height: 20vh;
+    width: 22vw;
     display: flex;
-    flex-direction: row;
     align-items: center;
     background-color: white;
-    color: black;
-    margin: 5%;
+    margin: 2%;
     padding: 5%;
-    border-color:#c43d4d;
-    border-style: solid;
-    border-radius: 8px;
-    background: white;
-    border-width: 0.3em;
+}
+
+.imageCard{
+    width: 12vw;
 }

@@ -29,7 +29,7 @@ h1 {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../src/assets/images/wallpaperpikachu.jpg");
+  background-image: url("https://image.winudf.com/v2/image/Y29tLmhkcG9rZW1vbi53YWxscGFwZXJfc2NyZWVuXzNfMTUzMDE2NzkzOV8wNDk/screen-3.jpg?fakeurl=1&type=.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -39,6 +39,8 @@ h1 {
   position: relative;
   left: 5%;
   top: 5%;
+  color: black;
+  text-align: left;
 }
 
 .formStart {
@@ -67,9 +69,6 @@ h1 {
   }
 }
 
-.card {
-  padding: 2em;
-}
 
 .read-the-docs {
   color: #888;

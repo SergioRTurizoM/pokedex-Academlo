@@ -7,13 +7,18 @@ import PokeInput from "./components/PokeInput";
 import Pokedex from "./components/Pokedex";
 import PokemonDetail from "./components/PokemonDetail";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import "bootswatch/dist/quartz/bootstrap.min.css";
+
+
 
 function App() {
+
+
   return (
     <HashRouter>
+     
       <Routes>
         <Route path="/" element={<PokeInput />}></Route>
-
         <Route element={<ProtectedRoutes />}>
           <Route path="/pokedex" element={<Pokedex />}></Route>
           <Route path="/pokedex/:id" element={<PokemonDetail />}></Route>
